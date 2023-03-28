@@ -2,7 +2,7 @@
 module.exports = (axios) => () => ({
 	async getCurrentUser() {
 		try {
-			return await axios.get(`/users/me`);
+			return await axios.get(`/users/me`).then(response => response.data);
 		} catch (error) {
 			throw new Error(error);
 		}
@@ -10,7 +10,7 @@ module.exports = (axios) => () => ({
 
 	async getUserByUsername(username) {
 		try {
-			return await axios.get(encodeURI(`/users?username=${username}`));
+			return await axios.get(encodeURI(`/users?username=${username}`)).then(response => response.data);
 		} catch (error) {
 			throw new Error(error);
 		}
@@ -18,7 +18,7 @@ module.exports = (axios) => () => ({
 
 	async updateUserData(user_id, user_data) {
 		try {
-			return $axios.$put(`/users/${user_id}`, user_data);
+			return axios.put(`/users/${user_id}`, user_data).then(response => response.data);
 		} catch (error) {
 			throw new Error(error);
 		}
@@ -34,7 +34,7 @@ module.exports = (axios) => () => ({
 
 	async resetPassword(data) {
 		try {
-			return await axios.post(`/auth/reset-password`, data);
+			return await axios.post(`/auth/reset-password`, data).then(response => response.data);
 		} catch (error) {
 			throw new Error(error);
 		}

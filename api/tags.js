@@ -1,7 +1,7 @@
 module.exports = axios => () => ({
   async getTags() {
     try {
-      return await axios.get(`/tags`);
+      return await axios.get(`/tags`).then(response => response.data);
   } catch (error) {
       throw new Error(error) 
   }
@@ -10,7 +10,7 @@ module.exports = axios => () => ({
   
     async getTagBySlug(slug) {
       try {
-        return await axios.get(encodeURI(`/tags?slug=${slug}`));
+        return await axios.get(encodeURI(`/tags?slug=${slug}`)).then(response => response.data);
     } catch (error) {
         throw new Error(error) 
     }
