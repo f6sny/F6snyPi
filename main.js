@@ -1,6 +1,6 @@
 const axios = require('axios')
 const instance = axios.create({
-  baseURL: 'https://api.example.com'
+  baseURL: 'https://api.f6sny.com'
 });
 
 const globalAPI = require('./api/global')
