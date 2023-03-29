@@ -23,7 +23,7 @@ module.exports = axios => () => ({
         }
     },
   
-    async searchJokesByKeywords(keywords, start) {
+    async searchJokesByKeywords(keywords, start = 0) {
         try {
             return await axios.get(
                 encodeURI(`/jokes?_q=${keywords}&_start=${start}`)
@@ -49,7 +49,7 @@ module.exports = axios => () => ({
         }
     },
   
-    async getTagJokesBySlug(slug, start) {
+    async getTagJokesBySlug(slug, start = 0) {
         try {
             return await axios.get(encodeURI(`/jokes?tags.slug=${slug}&_start=${start}`)).then(response => response.data);
         } catch (error) {
@@ -65,7 +65,7 @@ module.exports = axios => () => ({
         }
     },
   
-    async getUserJokesByID(user_id, start) {
+    async getUserJokesByID(user_id, start = 0) {
         try {
             return await axios.get(encodeURI(`/jokes?author=${user_id}&_sort=id:desc&_start=${start}`)).then(response => response.data);
         } catch (error) {

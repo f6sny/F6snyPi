@@ -1,7 +1,6 @@
-const axios = require('axios')
-const instance = axios.create({
-  baseURL: 'https://api.f6sny.com'
-});
+const instance = require('axios').default;
+instance.defaults.baseURL = 'https://api.f6sny.com';
+
 
 const globalAPI = require('./api/global')
 const jokesAPI = require('./api/jokes')
