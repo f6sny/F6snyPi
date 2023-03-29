@@ -9,11 +9,9 @@
   },
   "scripts": {
     "test": "jest --coverage",
-    "clean": "run-script-os",
-    "clean:darwin:linux": "rm -rf ./lib",
-    "clean:win32": "rmdir /s /q lib",
+    "clean": "shx rm -rf lib",
     "build": "npm run clean && npm run build:esm & npm run build:cjs",
-    "build:esm": "tsc -p ./configs/tsconfig.esm.json && node -e \"require('fs').rename('lib/esm/index.js', 'lib/esm/index.mjs', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\"",
+    "build:esm": "tsc -p ./configs/tsconfig.esm.json && shx mv lib/esm/index.js lib/esm/index.mjs",
     "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
     "prepack": "npm run build"
   },
@@ -52,10 +50,10 @@
   "homepage": "https://github.com/f6sny/F6snyPi#readme",
   "devDependencies": {
     "jest": "^29.5.0",
+    "shx": "^0.3.4",
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "axios": "^0.25.0",
-    "run-script-os": "^1.1.6"
+    "axios": "^0.25.0"
   }
 }

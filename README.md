@@ -8,13 +8,29 @@ To get started with the SwarmApp API, follow these steps:
 
 1. `$ npm i @6degrees/f6snypi`
 
-## Example Usage
+## Usage
 
-Later
+1. Import into your code
+
+   ```javascript
+    const f6snypi = require('@6degrees/f6snypi');
+    ```
+
+2. Get all jokes
+
+    ```javascript
+    const jokes =  await f6snypi.jokes().getJokes();
+    console.log(jokes)
+    ```
 
 ## Dependencies
 
-Later
+```javascript
+    "jest": "^29.5.0", // for testing
+    "shx": "^0.3.4", // for cross platform commands
+    "typescript": "^5.0.2" // just to be fancy 💅
+    "axios": "^0.25.0" // for api calls
+```
 
 ## Feature request
 
@@ -33,3 +49,4 @@ We welcome contributions from the community! To contribute to the this repo, fol
 ## License
 
 The F6sny API is licensed under the MIT License. See the LICENSE file for details.
+Unleash the devils احرق السفن
