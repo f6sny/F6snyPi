@@ -1,6 +1,6 @@
 const instance = require('axios').default;
 instance.defaults.baseURL = 'https://api.f6sny.com';
-const f6snypi = require("../main");
+const f6snypi = require("../lib/cjs/index");
 
 
 test("Test Jokes", async () => {
