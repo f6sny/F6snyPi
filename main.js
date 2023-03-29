@@ -1,5 +1,7 @@
 const axios = require('axios')
-axios.defaults.baseURL = 'https://api.f6sny.com';
+const instance = axios.create({
+  baseURL: 'https://api.example.com'
+});
 
 const globalAPI = require('./api/global')
 const jokesAPI = require('./api/jokes')
@@ -9,10 +11,10 @@ const commentsAPI = require('./api/comments')
 const usersAPI = require('./api/users')
 
 module.exports = {
-  global: globalAPI(axios),
-  jokes: jokesAPI(axios),
-  pages: pagesAPI(axios),
-  tags: tagsAPI(axios),
-  comments: commentsAPI(axios),
-  users: usersAPI(axios),
+  global: globalAPI(instance),
+  jokes: jokesAPI(instance),
+  pages: pagesAPI(instance),
+  tags: tagsAPI(instance),
+  comments: commentsAPI(instance),
+  users: usersAPI(instance),
 }
