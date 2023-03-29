@@ -1,4 +1,11 @@
 module.exports = (axios: any) => () => ({
+    /**
+    * Fetches jokes from the API.
+    * 
+    * @param {number} [start=0] - The starting index for fetching jokes.
+    * @returns {Promise<Array>} A Promise that resolves to an array of jokes.
+    * @throws {Error} If an error occurs while fetching the jokes.
+    */
     async getJokes(start = 0) {
         try {
             return await axios.get(`/jokes?_start=${start}`).then((response: any) => response.data);
