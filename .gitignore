@@ -28,7 +28,6 @@ jspm_packages/
 .env.production.local
 .env.local
 
-tests
 .editorconfig
 manual_test.js
 lib
