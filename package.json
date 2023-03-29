@@ -1,6 +1,6 @@
 {
   "name": "@6degrees/f6snypi",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "An API wrapper for https://api.f6sny.com for NPM",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
