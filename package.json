@@ -4,6 +4,7 @@
   "description": "An API wrapper for https://api.f6sny.com for NPM",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.mjs",
   "directories": {
     "test": "tests"
   },
@@ -11,8 +12,8 @@
     "test": "jest --coverage",
     "clean": "shx rm -rf lib",
     "build": "npm run clean && npm run build:esm & npm run build:cjs",
-    "build:esm": "tsc -p ./configs/tsconfig.esm.json && shx mv lib/esm/index.js lib/esm/index.mjs",
-    "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+    "build:esm": "tsc && shx mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "tsc -p ./tsconfig.cjs.json",
     "prepack": "npm run build"
   },
   "repository": {
